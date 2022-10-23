@@ -1,0 +1,33 @@
+@import '../theme', '../animations';
+
+svg {
+    position: relative;
+    width: 30%;
+}
+.figureColor {
+    @include themed() {
+        fill: t('dev-color');
+    }
+}
+.shirtColor {
+    @include themed() {
+        fill: t('shirt-color');
+    }
+}
+.overallColor {
+    @include themed() {
+        fill: t('overall-color');
+    }
+}
+.lineColor {
+    @include themed() {
+        fill: t('text');
+    }
+}
+.hairColor {
+    fill: #725443;
+    
+}
+.skinColor {
+    fill: #f6bfb2
+}

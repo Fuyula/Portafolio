@@ -1,0 +1,130 @@
+@font-face {
+    font-family: Red-hat;
+    src: url(../assets/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Red-hat-italic;
+    src: url(../assets/Red_Hat_Display/RedHatDisplay-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Red-hat-black;
+  src: url(../assets/Red_Hat_Display/static/RedHatDisplay-Black.ttf);
+}
+@font-face {
+  font-family: Red-hat-extra-bold;
+  src: url(../assets/Red_Hat_Display/static/RedHatDisplay-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Crimson-Text;
+  src: url(../assets/Crimson_Text/CrimsonText-SemiBold.ttf);
+}
+
+$primary: #DD7A8F;
+$secondary: #ffc8d8;
+$highlight: #f06399;
+$highlight-dark: #CF3A6E;
+$copper: #AD7474;
+$cream: #F5E9E2;
+$white: #ffffff;
+$black: #0B0014;
+$dark-blue: #110E1B;
+$deep-blue: #191528;
+$dark-purple: #3C162F;
+$wine: #5C162E;
+$blood: #7C162E;
+$light-themed-gray: #938B8D;
+$dark-themed-gray: #BFBCC8;
+$spacing-0: 6px;
+$spacing-1: 12px;
+$spacing-2: 24px;
+$spacing-3: 36px;
+$font-size-0: 71.96px;
+$font-size-1: 50.89px;
+$font-size-2: 36px;
+$font-size-3: 25.45px;
+$font-size-4: 18px;
+$font-size-5: 12.73px;
+$shadow-color: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+$dark-themed-shadow: rgba($black, 0.95) 0px 50px 100px -20px, rgba($black, 1) 0px 30px 60px -30px ;
+$light-theme-icon: "☀️";
+$dark-theme-icon: "🌙";
+$light-shirt-color: #c94a7b;
+$dark-shirt-color: #2f2e41;
+$dark-dev-color: #7c1651;
+$dark-cat: '../../assets/stalking-cat-dark.png';
+$light-cat: '../../assets/stalking-cat-light.png';
+$light-theme-logo: '../assets/PP.png';
+$dark-theme-logo: '../assets/PP-white.png';
+
+$themes: (
+    light: (
+        bg: $white,
+        text: $black,
+        header: $primary,
+        shadow: $shadow-color,
+        icon: $light-theme-icon,
+        theme-color: $white,
+        shirt-color: $light-shirt-color,
+        overall-color: $cream,
+        dev-color: $dark-shirt-color,
+        cat-color: $light-cat,
+        cat-eyes-color: rgb(66, 193, 243),
+        gray-color: $light-themed-gray,
+        highlight-color: $highlight,
+        logo: $light-theme-logo,
+        nav-hover-color: $secondary,
+    ),
+    dark: (
+        bg: $deep-blue,
+        text: #F3F2F8,
+        header: $wine,
+        shadow: $dark-themed-shadow,
+        icon: $dark-theme-icon,
+        theme-color: $deep-blue,
+        shirt-color: $dark-shirt-color,
+        overall-color: $dark-dev-color,
+        dev-color: $dark-dev-color,
+        cat-color: $dark-cat,
+        cat-eyes-color: rgb(57, 180, 57),
+        gray-color: $dark-themed-gray,
+        highlight-color: $highlight-dark,
+        logo: $dark-theme-logo,
+        nav-hover-color: $cream,
+
+    ),
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
+  
+*, html, body {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    font-family: Crimson-Text;
+    p, a {
+      font-family: Red-Hat;
+    }
+  }
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+  }

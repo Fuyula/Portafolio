@@ -1,0 +1,22 @@
+@import '../theme', '../animations';
+
+.Projects {
+    padding: $spacing-2;
+    h1, h2, h3, p {
+        align-self: center;
+        text-align: center;
+        margin-top: $spacing-1;
+    }
+    p {
+        padding: $spacing-2;
+    }
+    
+}
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: $spacing-1;
+    flex-wrap: wrap;
+}

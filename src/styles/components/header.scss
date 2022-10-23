@@ -1,0 +1,110 @@
+@import '../theme', '../animations';
+
+header {
+    @include themed() {
+        background: transparent;
+      }
+    box-sizing: border-box;
+    width: 100%;
+    color: $white;
+    padding: calc($spacing-1 + 3px) $spacing-3 calc($spacing-1 + 3px) $spacing-3;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    .sidenav-icon {
+        display: none;
+    }
+    
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        #toggle-button {
+            margin-inline-start: $spacing-2;
+        }
+    }
+    h3 {
+        @include themed(){
+            color: t('text');
+        }
+        font-weight: 600;
+        font-size: $font-size-3;
+    }
+    img {
+        @include themed(){
+            content: url(t('logo'));
+        }
+        height: 64px;
+        margin-inline: $spacing-1;
+        overflow: visible;
+        animation: stop_rotation 0.5s 1 linear;
+        &:hover {
+            animation: rotation_animation 2s infinite linear;
+        }
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        li a, li NavLink{
+            font-weight: 600;
+            @include themed(){
+                color: t('text');
+            }
+            
+            display: inline;
+            text-decoration: none;
+            padding: $spacing-1;
+            margin-inline: $spacing-0;
+            transition: .8s;
+            &:hover {
+                @include themed(){
+                    background-color: rgba(t('nav-hover-color'), 0.2);
+                }
+            }
+            
+        }
+        .active {
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 3px;
+            @include themed() {
+                text-decoration-color: t('highlight-color');
+            }
+            
+        
+        }
+    }
+    
+}
+@media (max-width: 768px) {
+    #nav { display: none; }
+    #toggle-button { margin-inline-start: $spacing-0; }
+    header { 
+        padding: calc($spacing-1 + 3px) $spacing-2 calc($spacing-1 + 3px) $spacing-2; 
+        h3 { display: none; }
+        img {
+            height: 32px;
+            margin-inline: $spacing-1;
+            overflow: visible;
+            animation: none;
+            &:hover {
+                animation: stop_rotation 0.5s 1 linear;
+            }
+        }
+        .sidenav-icon {
+            display: inline-block;
+            @include themed() {
+                color: t('text');
+            }
+        }
+    }
+    
+    
+    
+}

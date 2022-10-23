@@ -1,0 +1,106 @@
+@import './theme';
+
+@keyframes rotation_animation{
+    0% {
+        scale: 0.9;
+        transform: rotate(0);
+    }
+    25% {
+        scale: 0.8;
+        transform: rotate(90deg);
+    }
+    50% {
+        scale: 0.8;
+        transform: rotate(180deg);
+    }
+    75% {
+        scale: 0.8;
+        transform: rotate(270deg);
+    }
+    100% {
+        scale: 0.8;
+        transform: rotate(360deg);
+    }
+}
+@keyframes stop_rotation {
+    0% {
+        scale: 0.8;
+        transform: rotate(-360deg);
+    }
+    95% {
+        scale: 1.3;
+        transform: rotate(0);
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 $copper; }
+}
+
+.pulse:hover, .pulse:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+}
+
+.slide:hover {
+    @include themed(){
+        box-shadow: inset 6.5em 0 0 0 t('nav-hover-color');
+        color: t('dev-color');
+    }
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em $copper;
+  transform: translateY(-0.25em);
+}
+
+@keyframes eyeballs {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(-180deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(60deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+    10% {
+        opacity: .05;
+        transform: translateX(-5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn__fast {
+    0% {
+        opacity: 0;
+        transform: translate(-90%);
+    }
+    10% {
+        opacity: .05;
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

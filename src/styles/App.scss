@@ -1,0 +1,18 @@
+@import 'theme';
+
+
+.App {
+  @include themed() {
+    color: t('text');
+    background-color: t('bg');
+  }
+  min-height: 100vh;
+}
+main {
+  @media (min-width: 1249px) {
+    padding-top: 5%;
+  }
+  padding-top: 15%;
+  display: flex;
+  flex-direction: column;
+}

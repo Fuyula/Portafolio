@@ -1,0 +1,147 @@
+@import '../theme', '../animations';
+
+
+@media (min-width: 1249px) {
+    #stalker-cat {
+        min-width: 710px;
+        height: auto;
+    }
+    .cat {
+        @include themed(){
+            background: url(t('cat-color')); 
+         }
+        display: flex;
+        background-repeat: no-repeat;
+        height: 500px;
+        min-width: 710px;
+        width: 710px;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .eyes {
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        justify-content: center;
+        height: 230px;
+    }
+    .eye {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        margin: 0 $spacing-3 0 $spacing-3;
+        z-index: 1;
+    }
+    .eye::before {
+        @include themed(){
+            border: 10px solid t('cat-eyes-color'); 
+         }
+        content: '';
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-70%, 35%);
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 1248px) and (min-width: 769px) {
+    #stalker-cat {
+        min-width: 400px;
+        background-color: antiquewhite;
+    }
+    .cat {
+        @include themed(){
+            background: url(t('cat-color')); 
+         }
+        display: flex;
+        background-size: 100% auto !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+        height: 300px;
+        width: 400px;
+        min-width: 400px;
+        justify-content: center;
+    }
+    .eyes {
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        justify-content: center;
+        height: 130px;
+    }
+    .eye {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        margin: 0 $spacing-2 0 calc($spacing-2 + 3px);
+        z-index: 1;
+        animation: eyeballs 8s infinite linear;
+    }
+    .eye::before {
+        @include themed(){
+            border: 6px solid t('cat-eyes-color'); 
+         }
+        content: '';
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-70%, 35%);
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 768px) {
+    #stalker-cat {
+        min-width: 400px;
+        background-color: antiquewhite;
+    }
+    .cat {
+        @include themed(){
+            background: url(t('cat-color')); 
+         }
+        display: flex;
+        background-size: 100% auto !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+        height: 256px;
+        width: 320px;
+        justify-content: center;
+    }
+    .eyes {
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        height: 104px;
+        margin-inline-start: 13px;
+    }
+    .eye {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        margin: 0 $spacing-2 0 $spacing-1;
+        z-index: 1;
+        animation: eyeballs 8s infinite linear;
+    }
+    .eye::before {
+        @include themed(){
+            border: 5px solid t('cat-eyes-color'); 
+         }
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-70%, 35%);
+        box-sizing: border-box;
+    }
+}
