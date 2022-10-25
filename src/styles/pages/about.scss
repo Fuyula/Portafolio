@@ -1,0 +1,194 @@
+@import '../theme', '../animations';
+
+section {
+    width: 95%;
+    box-sizing: border-box;
+    padding: $spacing-2;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    h1 {
+        margin: $spacing-2 0 $spacing-1 0;
+    }
+}
+
+section.about-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    #about-me-description {
+        margin: $spacing-2;
+        display: flex;
+        align-self: stretch;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        p {
+            align-self: center;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            #about-me-skills {
+                align-self: flex-end;
+            }
+        }
+
+    }
+    #about-me-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-self: center;
+        width: 100%;
+        img {
+            border-radius: 50%;
+        }
+    }
+    .skills-container {
+        display: flex;
+        flex-direction: row !important;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: $spacing-2;
+        max-width: 100%;
+        align-self: center;
+        flex-wrap: wrap;
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: $spacing-1;
+            p {
+                font-weight: 600;
+                margin-top: $spacing-1;
+            }
+            .skill-icon {
+                font-size: $font-size-3;
+            }
+
+        }
+    }
+}
+section#experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing-2;
+    .experience-cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        .experience-card {
+            h3, p {
+                font-family: Red-Hat;
+            }
+            @include themed() {
+                background-color: t('bg');
+                box-shadow: t('shadow');
+            }
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+            h3 {
+                @include themed() {
+                    color: t('highlight-color')
+                }
+                font-weight: 600;
+            }
+            .experience-date p{
+                @include themed() {
+                    color: t('gray-color');
+                    font-style: italic;
+                }
+                margin: $spacing-1 $spacing-0 $spacing-1 0px;
+            }
+        }
+    }
+}
+
+@media ( min-width: 769px ) {
+    section.about-section {
+        flex-direction: row;
+        padding-inline: $spacing-3;
+        #about-me-description {
+            max-width: 65%;
+            p {
+                width: 80%;
+            }
+        }
+        #about-me-image {
+            img {
+                width: 100%;
+            }
+        }
+        .skills-container {
+            display: flex;
+            flex-direction: row !important;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            padding: $spacing-2;
+            max-width: 100%;
+            align-self: center;
+            flex-wrap: wrap;
+            .skill {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: $spacing-1;
+                p {
+                    font-weight: 600;
+                    margin-top: $spacing-1;
+                }
+                .skill-icon {
+                    font-size: $font-size-3;
+                }
+    
+            }
+        }
+    }
+    section#experience-section {
+        padding: $spacing-2;
+        .experience-cards-container{
+            flex-direction: row;
+            .experience-card {
+                padding: $spacing-3;
+                width: 35%;
+                margin: $spacing-1;
+            }
+        }
+    }
+}
+
+@media ( max-width: 768px ) {
+    section.about-section {
+        padding-inline: $spacing-1;
+        flex-direction: column;
+        #about-me-description {
+            max-width: 100%;
+        }
+        #about-me-image {
+            img {
+                width: 60%;
+            }
+        }
+    }
+    section#experience-section {
+        padding: $spacing-1;
+        .experience-cards-container{
+            flex-direction: column;
+            .experience-card {
+                padding: $spacing-3;
+                width: 80%;
+                margin-bottom: $spacing-1;
+            }
+        }
+    }
+}

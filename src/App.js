@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import SideNav from './components/SideNav';
 import { useState } from 'react';
+import SocialMediaBar from './components/SocialMediaBar';
 
 function App() {
   const [ sideNavVisibility, setSideNavVisibility ] = useState( false )
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
       <SideNav visibility = { sideNavVisibility } setVisibility = { setSideNavVisibility } />
       <div>
+        <SocialMediaBar />
         <Header setVisibility = { setSideNavVisibility } />
         <Routes>
           <Route exact path="/" index element={<Home />}  />

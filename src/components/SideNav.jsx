@@ -4,9 +4,9 @@ import '../styles/components/sidenav.scss'
 
 const SideNav = ({ visibility, setVisibility }) => {
     return (
-        <div id="sideNav" class="overlay" style={{ width:  visibility? '100%' : '0%' }}>
-            <button class="closebtn" onClick={ () => setVisibility(false) }>&times;</button>
-            <div class="overlay-content">
+        <div id="sideNav" className="overlay" style={{ width:  visibility? '100%' : '0%' }}>
+            <button className="closebtn" onClick={ () => setVisibility(false) }>&times;</button>
+            <div className="overlay-content">
                 <li><NavLink to="/" strict end className={'nav-links'} onClick={ () => setVisibility(false) }>Inicio</NavLink></li>
                 <li><NavLink to="/about" strict end className={'nav-links'} onClick={ () => setVisibility(false) }>Sobre mí</NavLink></li>
                 <li><NavLink to="/projects" strict end className={'nav-links'} onClick={ () => setVisibility(false) }>Proyectos</NavLink></li>

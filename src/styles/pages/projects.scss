@@ -14,9 +14,6 @@
 }
 .projects-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
-    margin-top: $spacing-1;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
 }

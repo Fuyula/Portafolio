@@ -1,0 +1,57 @@
+@import '../theme', '../animations';
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+
+  }
+  
+  /* Style the icon bar links */
+  .icon-bar a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s ease;
+    scale: 1;
+    transition: scale .3s linear;
+    @include themed() {
+        color: t('text');
+        background-color: transparent;
+    }
+    span p{
+        visibility: hidden;
+        text-decoration: none;
+    }
+    &:hover {
+        opacity: .8;
+        
+        span p{
+            visibility: visible;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+        }
+        @include themed() {
+            color: t('highlight-color');
+            scale: 1.5;
+            text-decoration-color: t('highlight-color');
+        }
+    }
+  }
+  @media ( min-width: 769px ){
+    .icon-bar a {
+        padding: 20px 20px 20px 20px;
+        font-size: 18px;
+    }
+
+  }
+  @media ( max-width: 768px ){
+    .icon-bar a {
+        padding: 10px 10px 10px 10px;
+        font-size: 12px;
+    }
+}

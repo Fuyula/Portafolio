@@ -18,10 +18,10 @@ const Header = ({ setVisibility }) => {
       <div>
         <div id="nav">
           <ul>
-            <li><NavLink to="/" strict end className='slide'>Inicio</NavLink></li>
-            <li><NavLink to="/about" strict end className='slide'>Sobre mí</NavLink></li>
-            <li><NavLink to="/projects" strict end className='slide'>Proyectos</NavLink></li>
-            <li><NavLink to="/contact" strict end className='slide'>Contacto</NavLink></li>
+            <li><NavLink to="/" strict end className='slide-header-button'>Inicio</NavLink></li>
+            <li><NavLink to="/about" strict end className='slide-header-button'>Sobre mí</NavLink></li>
+            <li><NavLink to="/projects" strict end className='slide-header-button'>Proyectos</NavLink></li>
+            <li><NavLink to="/contact" strict end className='slide-header-button'>Contacto</NavLink></li>
           </ul>
         </div>
         

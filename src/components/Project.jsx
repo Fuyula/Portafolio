@@ -26,40 +26,71 @@ const Project = ({ project = "Proyecto", description = lorem, tecnologies = "Tec
         }
     } 
     return (
-        <div className='project-card'>
-            <div className='project-name'>
-                <div id="project-name">
-                    
-                   <h2> { project } </h2>
-                    <img src={ selectImage( image ).img1 } alt = "" />
-                    <div className='project-buttons'>
-                        { urls.github && <a href={ urls.github }>
-                            <button>
-                                <FontAwesomeIcon icon={ faGithub } />
-                            </button>
-                            GitHub
-                        </a>}
-                        { urls.web && <a href={ urls.web }>
-                            <button>
-                                <FontAwesomeIcon icon={ faGlobe } />
-                            </button>
-                            Sitio web
-                        </a>}
+        <div id='projects-container'>
+        {/* Desktop */}
+            <div className='project-card'>
+                <div className='project-name'>
+                    <div id="project-name">
+                        <h2> { project } </h2>
+                        <img src={ selectImage( image ).img1 } alt = "" />
+                        <div className='project-buttons'>
+                            { urls.github && <a href={ urls.github }>
+                                <button>
+                                    <FontAwesomeIcon icon={ faGithub } />
+                                </button>
+                                GitHub
+                            </a>}
+                            { urls.web && <a href={ urls.web }>
+                                <button>
+                                    <FontAwesomeIcon icon={ faGlobe } />
+                                </button>
+                                Sitio web
+                            </a>}
+                        </div>
+                    </div>
+                    <div className='hidden-project-details'>
+                        <div className='hidden-project-gallery'>
+                            <img src = { selectImage( image ).img1 } alt = "" />
+                            <img src = { selectImage( image ).img2 } alt = "" />
+                            <img src = { selectImage( image ).img3 } alt = "" />
+                        </div>
                     </div>
                 </div>
-                <div className='hidden-project-details'>
-                    <div className='hidden-project-gallery'>
-                        <img src = { selectImage( image ).img1 } alt = "" />
-                        <img src = { selectImage( image ).img2 } alt = "" />
-                        <img src = { selectImage( image ).img3 } alt = "" />
+                <div className='project-description'>
+                    <p> { description } </p>
+                    <div>
+                        <p> Tecnologías </p>
+                        <p> { tecnologies } </p>
                     </div>
                 </div>
             </div>
-            <div className='project-description'>
-                <p> { description } </p>
-                <div>
-                    <p> Tecnologías </p>
-                    <p> { tecnologies } </p>
+        {/* Tablet/Mobile */}
+            <div className='mobile-project-card'>
+                <div className='mobile-project-card-front'>
+                    <h3> { project } </h3>
+                    <p> { description }</p>
+                    <div>
+                        <p> Tecnologías </p>
+                        <p> { tecnologies } </p>
+                    </div>
+                </div>
+                <div className='mobile-project-card-back'>
+                    <h3> { project } </h3>
+                    <img src = { selectImage( image ).img1 } alt = "" />
+                    <div className='project-buttons'>
+                            { urls.github && <a href={ urls.github }>
+                                <button>
+                                    <FontAwesomeIcon icon={ faGithub } />
+                                </button>
+                                GitHub
+                            </a>}
+                            { urls.web && <a href={ urls.web }>
+                                <button>
+                                    <FontAwesomeIcon icon={ faGlobe } />
+                                </button>
+                                Sitio web
+                            </a>}
+                        </div>
                 </div>
             </div>
         </div>

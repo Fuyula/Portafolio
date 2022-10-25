@@ -1,11 +1,15 @@
 import React from 'react'
 import '../styles/pages/projects.scss'
 import Project from '../components/Project'
+import '../styles/App.scss'
+
+const lorem = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse perferendis corporis odit dolorem cumque modi animi incidunt, aut, laudantium ad praesentium? Quasi cum, praesentium aliquam modi voluptas unde tempora eveniet.'
+
 
 const projectsInfo = [
     { 
         name: "Flower themed pychologist website",
-        description: ``,
+        description: lorem.repeat(2),
         tecnologies: "HTML, Sass, JavaScript",
         image: 'psy',
         urls: { 
@@ -57,7 +61,8 @@ const Projects = () => {
                     {
                         projectsInfo.map( (project) => {
                             return (
-                                <Project 
+                                <Project
+                                    key = { project.name }
                                     project = { project.name}
                                     description = { project.description } 
                                     tecnologies = { project.tecnologies } 
