@@ -37,7 +37,9 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 $copper; }
+  0% { 
+        box-shadow: 0 0 0 0 $highlight; 
+    }
 }
 
 .pulse:hover, .pulse:focus {

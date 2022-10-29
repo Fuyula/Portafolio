@@ -1,6 +1,10 @@
 @import '../theme', '../animations';
 
 .Projects {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-self: center;
     padding: $spacing-2;
     h1, h2, h3, p {
         align-self: center;
@@ -10,10 +14,14 @@
     p {
         padding: $spacing-2;
     }
+    align-items: center;
+    justify-content: center;
     
 }
 .projects-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: stretch;
+    align-self: center;
+    width: 90%;
 }

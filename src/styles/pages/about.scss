@@ -83,7 +83,7 @@ section#experience-section {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
         .experience-card {
             h3, p {
                 font-family: Red-Hat;

@@ -1,6 +1,17 @@
 @import '../theme', '../animations';
 
 /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+@media (min-height: 150px) {
+    .icon-bar {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-height: 149px) {
+    .icon-bar {
+        display: none;
+    }
+}
 .icon-bar {
     position: fixed;
     top: 50%;
@@ -18,7 +29,6 @@
     text-align: center;
     transition: all 0.3s ease;
     scale: 1;
-    transition: scale .3s linear;
     @include themed() {
         color: t('text');
         background-color: transparent;
@@ -29,12 +39,6 @@
     }
     &:hover {
         opacity: .8;
-        
-        span p{
-            visibility: visible;
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-        }
         @include themed() {
             color: t('highlight-color');
             scale: 1.5;
@@ -42,9 +46,16 @@
         }
     }
   }
-  @media ( min-width: 769px ){
+  @media (min-width: 1200px ){
     .icon-bar a {
-        padding: 20px 20px 20px 20px;
+        padding: 4vh;
+        font-size: 24px;
+    }
+
+  }
+  @media ( min-width: 769px) and ( max-width: 1199px){
+    .icon-bar a {
+        padding: 4vh;
         font-size: 18px;
     }
 

@@ -1,0 +1,120 @@
+@import '../../theme', '../../animations';
+
+.mobile-project-card {
+  display: none;
+}
+
+@media ( max-width: 768px ) {
+    .mobile-project-card {
+      @include themed() {
+        background-color: t('bg');
+        box-shadow: t('shadow');
+      }
+      width: 100%;
+      margin-bottom: $spacing-2;
+      display: flex;
+      flex-direction: column;
+      h3, p {
+        font-family: Red-Hat;
+      }
+      h3 {
+        font-size: $font-size-4;
+      }
+      p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: $spacing-1;
+        font-size: $font-size-5;
+      }
+      
+      .mobile-project-card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $spacing-2 $spacing-0 $spacing-2 $spacing-0;
+        height: 100%;
+        h3 {
+          @include themed() {
+            color: t('highlight-color');
+          }
+        }
+      }
+      .mobile-project-card-back {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 0%;
+        @include themed() {
+          background-color: t('highlight-color');
+        }
+        img, h3, p, a {
+          display: none;
+        }
+        
+      }
+      &:hover {
+        .mobile-project-card-front {
+          height: 0%;
+          padding: 0px;
+          h3,p {
+            display: none;
+          }
+        }
+        .mobile-project-card-back {
+          @include themed() {
+            background-color: t('highlight-color');
+          }
+          padding: $spacing-1;
+          height: 100%;
+          max-height: 95%; /*?*/
+          color: $white;
+          animation: fadeIn__down__container .5s 1 linear;
+          h3 {
+            display: block;
+            margin-top: $spacing-1;
+            margin-bottom: $spacing-1;
+            animation: fadeIn__down 1.5s 1 linear;
+          }
+          img {
+            animation: fadeIn__down 1.5s 1 linear;
+            display: block;
+            max-width: 100%;
+            max-height: 50vh;
+          }
+          
+          .project-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+            a{
+              display: flex;
+              flex-direction: column;
+              text-decoration: none;
+              color: $white;
+              text-align: center;
+              font-size: $font-size-5;
+              animation: fadeIn__down 1.5s 1 linear;
+              margin-inline: $spacing-1;
+              button {
+                display: block;
+                color: $white;
+                font-family: Red-Hat;
+                font-size: 1.5rem;
+                font-weight: 600;
+                background-color: transparent;
+                margin: $spacing-1;
+                align-self: center;
+                border: none;
+                &:hover {
+                  transform: scale(1.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
