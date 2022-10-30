@@ -1,0 +1,19 @@
+@import '../theme', '../animations';
+
+.switch-lang {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+.switch-lang-button {
+    @include themed() {
+        background-color: t('highlight-color');
+    }
+    color: $white;
+    border: none;
+    padding: calc(max(1vw, 1vh));
+    border-radius: 50%;
+    animation: none;
+
+}

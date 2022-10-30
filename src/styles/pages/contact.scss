@@ -28,7 +28,6 @@
 
 .cv-buttons-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     .cv-button {
         padding: $spacing-2;
@@ -57,9 +56,9 @@
         }
     }
 }
+
 .lets-talk {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     margin-top: $spacing-1;
@@ -93,5 +92,23 @@
             }
         }
         
+    }
+}
+
+@media (min-width: 769px ) {
+    .cv-buttons-container {
+        flex-direction: row;
+    }
+    .lets-talk {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px ) {
+    .cv-buttons-container {
+        flex-direction: column;
+    }
+    .lets-talk {
+        flex-direction: column;
     }
 }
