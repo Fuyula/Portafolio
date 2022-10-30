@@ -1,0 +1,79 @@
+@import '../../theme', '../../animations';
+
+.text-area-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  textarea {
+    background-color: transparent;
+    resize: none;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    transition: all 1s ease;
+    @include themed() {
+        border-bottom-color: t('gray-color');
+        color: t('text')
+    }
+    &::placeholder {
+        visibility: hidden;
+        opacity: 0;
+        color: lightgray;
+        transition: all 1s ease;
+    }
+    
+    
+    &:empty + .textarea-label {
+        transform: translateY(-950%);
+        transition: all 1s ease;
+    }
+    &:focus {
+        outline: none;
+        @include themed() {
+            border-color: t('highlight-color');
+        }
+        &::placeholder {
+            visibility: visible;
+            color: lightgray;
+            opacity: 1;
+        }
+        & + .textarea-label {
+            transform: translateY(-1150%);
+            @include themed() {
+                color: t('highlight-color');
+            }
+        }
+    }
+    
+    &:not(:focus):not(:empty) {
+        @include themed() {
+            border-bottom-color: t('gray-color');
+        }
+        & + .textarea-label {
+            @include themed() {
+                color: t('gray-color');
+            }
+            transform: translateY(-1150%);
+        }
+    }
+    
+    
+  }
+  
+  
+  .textarea-label{
+    text-align: left;
+    padding-inline: 10px;
+    margin-inline: 10px;
+    @include themed() {
+        color: t('gray-color');
+    }
+  }
+  @media (max-width: 768px) {
+    textarea {
+        z-index: 1;
+    }
+}

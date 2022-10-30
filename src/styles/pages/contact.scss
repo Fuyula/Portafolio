@@ -17,51 +17,39 @@
         background-color: t('bg');
         box-shadow: t('shadow');
     }
-    h2 {
-        padding: $spacing-2;
+    h2, p {
+        padding: $spacing-1;
     }
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: $spacing-3;
-    margin-top: $spacing-3;
+    width: 90%;
+    margin-inline: $spacing-3;
 }
 
-.cv-buttons-container {
+.divider {
     display: flex;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
-    .cv-button {
-        padding: $spacing-2;
-        margin: $spacing-3;
-        font-size: $font-size-4;
-        font-family: Red-Hat;
-        font-weight: 600;
-        &--filled {
-            @extend .cv-button;
-            border: none;
-            color: $white;
-            @include themed() {
-                background-color: t('highlight-color');
-            }
-        }
-        &--outlined {
-            @extend .cv-button;
-            border-width: 2px;
-            border-style: solid;
-            background-color: transparent;
-            @include themed() {
-                border-color: t('highlight-color');
-                color: t('text');
-                
-            }
-        }
-    }
 }
 
 .lets-talk {
     display: flex;
+    flex-direction: column !important;
     align-items: center;
-    justify-content: space-evenly;
-    margin-top: $spacing-1;
+    align-self: flex-start;
+    max-width: 100%;
+    .icons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
     .lets-talk-icon-container {
         width: 30%;
         display: flex;
@@ -102,6 +90,9 @@
     .lets-talk {
         flex-direction: row;
     }
+    .divider {
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 768px ) {
@@ -109,6 +100,10 @@
         flex-direction: column;
     }
     .lets-talk {
+        flex-direction: column;
+        margin-top: $spacing-3;
+    }
+    .divider {
         flex-direction: column;
     }
 }

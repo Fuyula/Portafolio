@@ -11,7 +11,38 @@ section {
         margin: $spacing-2 0 $spacing-1 0;
     }
 }
-
+.cv-buttons-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    justify-content: center;
+    .cv-button {
+        padding: $spacing-2;
+        margin: $spacing-3;
+        font-size: $font-size-4;
+        font-family: Red-Hat;
+        font-weight: 600;
+        &--filled {
+            @extend .cv-button;
+            border: none;
+            color: $white;
+            @include themed() {
+                background-color: t('highlight-color');
+            }
+        }
+        &--outlined {
+            @extend .cv-button;
+            border-width: 2px;
+            border-style: solid;
+            background-color: transparent;
+            @include themed() {
+                border-color: t('highlight-color');
+                color: t('text');
+                
+            }
+        }
+    }
+}
 section.about-section {
     display: flex;
     align-items: flex-start;

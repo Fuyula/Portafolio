@@ -54,6 +54,14 @@ const About = () => {
               <h1>Sobre mí</h1>
               <p>{ lorem.repeat(3) }</p>
             </div>
+            <div className='cv-buttons-container'>
+              <button className='cv-button--filled pulse'>
+                Descarga mi CV
+              </button>
+              <button className='cv-button--outlined pulse'>
+                O míralo online
+              </button>
+            </div>
             <div id='about-me-skills'>
               <h1>Mis favoritos ❤️</h1>
               <div className='skills-container'>

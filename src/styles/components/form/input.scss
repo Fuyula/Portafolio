@@ -1,0 +1,100 @@
+@import '../../theme', '../../animations';
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.form-label {
+    @include themed() {
+        color: t('gray-color');
+    }
+    
+    text-align: left;
+    margin-inline: 10px;
+    padding-inline: 10px;
+    visibility: visible;
+}
+
+.form-input {
+    background-color: transparent;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom-style: solid;
+    @include themed() {
+        border-bottom-color: t('gray-color');
+    }
+    transition: all 1s 1 ease;
+    color: transparent;
+    &[value=""] + .form-label {
+        transition: all 1s ease;
+        transform: translateY(-200%);
+    }
+    &:not(:focus):not([value=""]) {
+        border-bottom-color: rgb(170, 170, 170);
+        @include themed() {
+            color: t('text');
+        }
+        
+        & + .form-label {
+            visibility: visible;
+            background: transparent;
+            color: rgb(170, 170, 170);
+            transform: translateY(-350%);
+        }
+    }
+    
+    &:focus {
+        border: none;
+        outline: none;
+        border-bottom-style: solid;
+        @include themed() {
+            border-bottom-color: t('highlight-color');
+            color: t('text');
+        }
+        &::placeholder {
+            opacity: 1;
+        }
+        & + .form-label {
+            visibility: visible;
+            background: transparent;
+            @include themed() {
+                color: t('highlight-color');
+            }
+            transform: translateY(-350%);
+        }
+        
+        
+    }
+    
+    &::placeholder {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        color: rgb(170, 170, 170);
+    }
+    &:not([value=""]) {
+        &:invalid {
+            border-bottom-color: red;
+            & + .form-label {
+                color: red;
+            }
+        }
+        &:valid {
+            border-bottom-color: rgb(108, 230, 61);
+            &:valid + .form-label {
+                color: rgb(108, 230, 61);
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .form-input {
+        z-index: 1;
+    }
+}
+  
+  
+  
