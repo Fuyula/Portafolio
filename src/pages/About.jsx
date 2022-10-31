@@ -8,6 +8,7 @@ import { faCss3 } from '@fortawesome/free-brands-svg-icons';
 import { faSass } from '@fortawesome/free-brands-svg-icons';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
 import { faPython } from '@fortawesome/free-brands-svg-icons'; 
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const lorem = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius porro mollitia reprehenderit quis, suscipit quaerat sed magni totam consectetur minus perspiciatis beatae sit facilis repellat aspernatur magnam, hic molestiae explicabo."
@@ -55,12 +56,12 @@ const About = () => {
               <p>{ lorem.repeat(3) }</p>
             </div>
             <div className='cv-buttons-container'>
-              <button className='cv-button--filled pulse'>
+              <Link className='cv-button--filled pulse' to='/resume/cv.pdf' target="_blank" download>
                 Descarga mi CV
-              </button>
-              <button className='cv-button--outlined pulse'>
+              </Link>
+              <a className='cv-button--outlined pulse' href="https://1drv.ms/b/s!Ajhl0JPJm4xYiswS9l8-rSUXFf8jqw?e=NS3M4G">
                 O míralo online
-              </button>
+              </a>
             </div>
             <div id='about-me-skills'>
               <h1>Mis favoritos ❤️</h1>
